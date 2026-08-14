@@ -11,6 +11,17 @@ div{
     padding :5px;
     width: 300px;
     align-items: center;
-    background-color:hsl(220, 26%, 38%);
+    background-color: hsl(220, 26%, 38%);
 
+}
+#BTN1{
+    font-size: 1.4em;
+    background-color: hsl(220, 26%, 68%);
+}
+#myH1{
+    color:black;
+}
+#BTN1:hover{
+    font-size: 1.5em;
+    background-color: hsl(220, 26%, 68%);
 }
