@@ -4,13 +4,13 @@ function generate_password (length,include_lowercase,include_uppercase,include_n
    const numberChars = "1234567890"
    const symbolChars = "!@#$%^&*()_-<>~?/:|;"
 
-   let allowedchars = " ";
-   let password = " ";
+   let allowedchars = "";
+   let password = "";
 
-   allowedchars += include_lowercase ? lowercaseChars : " ";
-   allowedchars += include_uppercase ? uppercaseChars : " ";
-   allowedchars += include_numbers ? numberChars : " ";
-   allowedchars += include_symbols ? symbolChars : " ";
+   allowedchars += include_lowercase ? lowercaseChars : "";
+   allowedchars += include_uppercase ? uppercaseChars : "";
+   allowedchars += include_numbers ? numberChars : "";
+   allowedchars += include_symbols ? symbolChars : "";
 
  if(length <8  ){
     return"(password length must be atleast 8 characters) "
@@ -19,15 +19,18 @@ function generate_password (length,include_lowercase,include_uppercase,include_n
     return"(atleast one set of charecter needs to be selected) "
  }
 
-
-          return "  "
-
+for(let i = 0; i < length ; i++ ){
+   const random_index = Math.floor(Math.random()*allowedchars.length)
+   password += allowedchars[random_index]
 }
-const password_length =  8
-const include_lowercase = false
-const include_uppercase = false 
-const include_numbers =  false
-const include_symbols =  false
+      
+   return password;
+}
+const password_length =  9
+const include_lowercase = true
+const include_uppercase = true 
+const include_numbers =  true
+const include_symbols =  true
 
 const password = generate_password (password_length,
                                    include_lowercase,
