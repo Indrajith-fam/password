@@ -1,4 +1,4 @@
-function generate_password (length,include_lowercase,include_uppercase,include_numbers,include_symbols){
+function  generate_password (length,include_lowercase,include_uppercase,include_numbers,include_symbols){
    const lowercaseChars = "abcdefghijklmnopqrstuvwxyz"
    const uppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
    const numberChars = "1234567890"
@@ -39,3 +39,18 @@ const password = generate_password (password_length,
                                    include_symbols)
 
                                    document.getElementById("myH1").textContent = `Generated password: ${password}`
+
+
+document.getElementById("BTN1").onclick = function () {
+    const password = generate_password(
+        password_length,
+        include_lowercase,
+        include_uppercase,
+        include_numbers,
+        include_symbols
+    );
+
+    document.getElementById("myH1").textContent =
+        `Generated password: ${password}`;
+};
+
